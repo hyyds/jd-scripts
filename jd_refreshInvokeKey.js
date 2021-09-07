@@ -1,5 +1,6 @@
 /*
 cron 0 0,12 * * *  jd_refreshInvokeKey.js, tag=宠汪汪invokeKey刷新
+转载请注明出处：https://github.com/he1pu/JDHelp
 */
 
 let $ = new Env('宠汪汪invokeKey刷新');
@@ -65,7 +66,7 @@ function refreshKey(jsStr) {
                             resolve(`刷新invokeKey失败`)
                             throw err;
                         }else {
-                            resolve(`刷新invokeKey成功：${invokeKey}`)
+                            resolve(`\n刷新invokeKey成功：${invokeKey}\n读取：\ntry{\n    let hConfig = require('./utils/HConfig.js')\n    invokeKey = hConfig.invokeKey\n}catch(e){}`)
                         }
                     })
                 }else {
