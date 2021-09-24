@@ -693,9 +693,9 @@ def isUpdate():
         info = result['info']
         readme1 = result['readme1']
         readme2 = result['readme2']
-        readme3 = result['readme3']
+        readme3 = "\n[Info]: \n目前每天07:30和14:30 更新远程shopid，08,15点后跑一次即可。"
         pError = result['m']
-        footer = result['footer']
+        footer = ""
         getWait = result['s']
         if isEnable > 50 and isEnable < 150:
             if version != uPversion:
@@ -887,7 +887,10 @@ def isMemory(memorylabel, startNum1, startNum2, midNum, endNum, pinNameList):
                         return startNum1, startNum2, memorylabel
                     if memoryJson['t1_startNum'] + 1 == midNum and memoryJson['t2_startNum'] + 1 == endNum:
                         print(
-                            f"\n上次已完成所有shopid，\n\nPs:您可以关注公众号或TG频道获取最新shopid。\n公众号: TopStyle\n电报TG:https://t.me/TopStyle2021\n\n请输入 0 或 1\n0 : 退出。\n1 : 重新跑一次，以防有漏")
+                            f"\n上次已完成所有shopid。\n\n请输入 0 或 1\n0 : 退出。\n1 : 重新跑一次，以防有漏\n")
+                        if "JD_COOKIE" in os.environ:
+                            print("当前Env环境，即将退出")
+                             exit(0)
                         try:
                             getyourNum = int(input("正在等待您的选择："))
                             if getyourNum == 1:
