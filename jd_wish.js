@@ -25,8 +25,8 @@ let message = '', allMessage = '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let appIdArr = ['1E1NXxq0', '1ElBTx6o'];
-let appNameArr = ['众筹许愿池', '企有此礼'];
+let appIdArr = ['1E1NXxq0', '1FV1VwKc'];
+let appNameArr = ['众筹许愿池', '惊喜大作战'];
 let appId, appName;
 $.shareCode = [];
 if ($.isNode()) {
@@ -68,7 +68,7 @@ if ($.isNode()) {
       }
     }
   }
-  let codes = [{"code":"T0225KkcREoe9wXXJ0_wkPFbcQCTJQmq67yR55awQ","appId":"1ElBTx6o","use":"code1"},{"code":"T0205KkcCH1egiO3V0us1apbCTJQmq67yR55awQ","appId":"1ElBTx6o","use":"code2"}];
+  let codes = [{"code":"T0225KkcREoe9wXXJ0_wkPFbcQDzxSnKS7zB55awQ","appId":"1ElBTx6o","use":"code1"},{"code":"T0205KkcCH1egiO3V0us1apbDzxSnKS7zB55awQ","appId":"1ElBTx6o","use":"code2"}];
   $.shareCode = [...$.shareCode, ...(codes || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
