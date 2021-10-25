@@ -513,7 +513,7 @@ async function toHelp() {
         let res = await help(inviteIds[j])
         if (res && res['data'] && res.code == 0) {
             console.log(`助力: ${res.data.bizMsg}`)
-            if (res.data?.bizCode == -6 || res.data?.bizCode == 108) {
+            if (res.data?.bizCode == -6 || res.data?.bizCode == 108 || res.data.bizMsg == '啊哦，活动太火爆了~') {
                 //console.log(`助力次数已耗尽，跳出`)
                 break
             }
@@ -551,6 +551,8 @@ function help(inId) {
 }
 
 async function toHelpPk() {
+  let pkCodes = await readShareCode('hyjpk');
+  let pkPool = pkCodes.data || [];
   console.log(`\n+++++++ 组队：内部组CK1 +++++++`)
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -559,7 +561,7 @@ async function toHelpPk() {
         let res = await helpPk($.pkInviteId);
         if (res && res.code == 0 && res.data) {
           console.log(`组队：${res.data.bizMsg}`)
-          if (res.data.bizCode == -5) {
+          if (res.data.bizCode == -5 || res.data.bizMsg == '啊哦，活动太火爆了~') {
             break;
           }
         }else {
@@ -568,14 +570,11 @@ async function toHelpPk() {
         await $.wait(2000);
       }
       console.log(`\n+++++++ 组队：互助池 +++++++`)
-      let pkCodes = await readShareCode('hyjpk');
-      let pkPool = pkCodes.data || [];
-      
       for (var j = 0; j < pkPool.length; j++) {
         let res = await helpPk(pkPool[j]);
         if (res && res.code == 0 && res.data) {
           console.log(`组队：${res.data.bizMsg}`)
-          if (res.data.bizCode == -5) {
+          if (res.data.bizCode == -5 || res.data.bizMsg == '啊哦，活动太火爆了~') {
             break;
           }
         }else {
