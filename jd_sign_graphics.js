@@ -109,7 +109,7 @@ async function signRun() {
     }else{
       errorNum++;
     }
-    await $.wait(1000)
+    await $.wait(parseInt(Math.random() * 5000 + 10000, 10))
   }
 }
 
@@ -196,7 +196,7 @@ function Sign(i) {
               }
             }
           } else {
-            console.log(data)
+            console.log(`${turnTableId[i].name} ${data}`)
           }
         }
       } catch (e) {
